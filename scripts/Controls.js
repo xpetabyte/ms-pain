@@ -1,4 +1,4 @@
-export class Controls {
+class Controls {
     constructor(canvas) {
         this.canvas = canvas;
         this.colorPicker = document.getElementById('colorPicker');

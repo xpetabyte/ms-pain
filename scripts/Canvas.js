@@ -1,4 +1,4 @@
-export class Canvas {
+class Canvas {
     constructor(canvasId) {
         this.canvas = document.getElementById(canvasId);
         this.ctx = this.canvas.getContext('2d');
@@ -26,7 +26,11 @@ export class Canvas {
 
     startDrawing(e) {
         this.isDrawing = true;
-        this.draw(e);
+        const rect = this.canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        this.ctx.beginPath();
+        this.ctx.moveTo(x, y);
     }
 
     stopDrawing() {
@@ -45,6 +49,7 @@ export class Canvas {
         this.ctx.stroke();
         this.ctx.beginPath();
         this.ctx.moveTo(x, y);
+        this.ctx.stroke();
     }
 
     setColor(color) {

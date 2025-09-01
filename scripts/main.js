@@ -1,6 +1,3 @@
-import { Canvas } from './Canvas.js';
-import { Controls } from './Controls.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = new Canvas('paintCanvas');
     new Controls(canvas);
